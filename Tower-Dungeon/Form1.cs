@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tower_Dungeon
 {
-    public partial class Form1: Form
+    public partial class TowerDungeon: Form
     {
-        public Form1()
+        public TowerDungeon()
         {
             InitializeComponent();
         }
