@@ -49,16 +49,34 @@
     <Compile Include="Business\PassHash.cs" />
     <Compile Include="Business\Person.cs" />
     <Compile Include="Data\Database Connection.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="TowerDungeonForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="TowerDungeonForm.Designer.cs">
+      <DependentUpon>TowerDungeonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pannels\LoginPannel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pannels\LoginPannel.Designer.cs">
+      <DependentUpon>LoginPannel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pannels\Test.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pannels\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="TowerDungeonForm.resx">
+      <DependentUpon>TowerDungeonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pannels\LoginPannel.resx">
+      <DependentUpon>LoginPannel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pannels\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

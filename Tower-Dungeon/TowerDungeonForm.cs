@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tower_Dungeon.Business;
+using Tower_Dungeon.Pannels;
 
 namespace Tower_Dungeon
 {
@@ -16,9 +17,17 @@ namespace Tower_Dungeon
         public TowerDungeon()
         {
             InitializeComponent();
+            AddUCLogin();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddUCLogin()
+        {
+            LoginPannel login = new LoginPannel();
+            login.Dock = DockStyle.Fill;
+            this.Controls.Add(login);
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             string pass = "Testpassword19!";
 
