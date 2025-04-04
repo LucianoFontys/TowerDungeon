@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Tower_Dungeon.Pannels
 {
-    public partial class LoginPannel: UserControl
+    public partial class LoginPannel : UserControl
     {
         public LoginPannel()
         {
@@ -21,6 +21,28 @@ namespace Tower_Dungeon.Pannels
         {
             tbxUsername.Location = new Point((this.Width / 2) - (tbxUsername.Width / 2), tbxUsername.Location.Y);
             tbxPassword.Location = new Point((this.Width / 2) - (tbxPassword.Width / 2), tbxPassword.Location.Y);
+            btnLogin.Location = new Point((this.Width / 2) - (btnLogin.Width / 2), btnLogin.Location.Y);
+            btnRegister.Location = new Point((this.Width / 2) - (btnRegister.Width / 2), btnRegister.Location.Y);
+            lblUsername.Location = new Point((this.Width / 2) - (lblUsername.Width / 2), lblUsername.Location.Y);
+            lblPassword.Location = new Point((this.Width / 2) - (lblPassword.Width / 2), lblPassword.Location.Y);
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddUCRegister()
+        {
+            RegisterPannel register = new RegisterPannel();
+            register.Dock = DockStyle.Fill;
+            this.Controls.Add(register);
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            AddUCRegister();
         }
     }
 }

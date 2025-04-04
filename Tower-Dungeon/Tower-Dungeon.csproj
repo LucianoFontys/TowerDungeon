@@ -49,6 +49,18 @@
     <Compile Include="Business\PassHash.cs" />
     <Compile Include="Business\Person.cs" />
     <Compile Include="Data\Database Connection.cs" />
+    <Compile Include="Data\SQLQueries.cs" />
+    <Compile Include="masterDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pannels\RegisterPannel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pannels\RegisterPannel.Designer.cs">
+      <DependentUpon>RegisterPannel.cs</DependentUpon>
+    </Compile>
     <Compile Include="TowerDungeonForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,22 +73,16 @@
     <Compile Include="Pannels\LoginPannel.Designer.cs">
       <DependentUpon>LoginPannel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pannels\Test.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Pannels\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pannels\RegisterPannel.resx">
+      <DependentUpon>RegisterPannel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TowerDungeonForm.resx">
       <DependentUpon>TowerDungeonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pannels\LoginPannel.resx">
       <DependentUpon>LoginPannel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pannels\Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -86,7 +92,19 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="masterDataSet.xsc">
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="masterDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>masterDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="masterDataSet.xss">
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -99,6 +117,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TowerBackgroundLoginPage.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
