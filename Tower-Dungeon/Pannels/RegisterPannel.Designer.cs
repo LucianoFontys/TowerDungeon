@@ -34,6 +34,8 @@
             this.tbxEmailAddress = new System.Windows.Forms.TextBox();
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.tbxPasswordConfirm = new System.Windows.Forms.TextBox();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbxUsername
@@ -63,7 +65,7 @@
             // tbxEmailAddress
             // 
             this.tbxEmailAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbxEmailAddress.Location = new System.Drawing.Point(139, 356);
+            this.tbxEmailAddress.Location = new System.Drawing.Point(139, 360);
             this.tbxEmailAddress.Name = "tbxEmailAddress";
             this.tbxEmailAddress.Size = new System.Drawing.Size(177, 20);
             this.tbxEmailAddress.TabIndex = 3;
@@ -84,10 +86,31 @@
             this.tbxPasswordConfirm.Size = new System.Drawing.Size(177, 20);
             this.tbxPasswordConfirm.TabIndex = 5;
             // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Location = new System.Drawing.Point(173, 520);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirm.TabIndex = 6;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(304, 520);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
             // RegisterPannel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.tbxPasswordConfirm);
             this.Controls.Add(this.tbxPassword);
             this.Controls.Add(this.tbxEmailAddress);
@@ -110,5 +133,7 @@
         private System.Windows.Forms.TextBox tbxEmailAddress;
         private System.Windows.Forms.TextBox tbxPassword;
         private System.Windows.Forms.TextBox tbxPasswordConfirm;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

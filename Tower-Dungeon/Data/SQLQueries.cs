@@ -8,6 +8,10 @@ namespace Tower_Dungeon.Data
 {
     public static class SQLQueries
     {
-        public static string connectionString = "Data Source=(localdb)\\TowerD;Initial Catalog=master;Integrated Security=True";
+        public static string connectionString = "Server=mssqlstud.fhict.local;Database=dbi417189;User Id=dbi417189;Password=S3#hX6b^FN;";
+
+        public static string addUsers = "INSERT INTO Users (fName, lName, email, password, username, isAdmin) " + "VALUES (@fName, @lName, @email, @password, @username, @isAdmin)";
+
+        public static string validateUser = "SELECT username, password FROM Users WHERE username = @username";
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tower_Dungeon.Business;
 using Tower_Dungeon.Pannels;
+using System.Threading;
 
 namespace Tower_Dungeon
 {
@@ -16,7 +17,7 @@ namespace Tower_Dungeon
     {
         public TowerDungeon()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             AddUCLogin();
         }
 
@@ -25,22 +26,6 @@ namespace Tower_Dungeon
             LoginPannel login = new LoginPannel();
             login.Dock = DockStyle.Fill;
             this.Controls.Add(login);
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            string pass = "Testpassword19!";
-
-            string hash1 = PassHash.Hash(pass);
-
-            if (PassHash.Verify(pass, hash1))
-            {
-                MessageBox.Show("true");
-            }
-            else
-            {
-                MessageBox.Show("False");
-            }
         }
     }
 }
