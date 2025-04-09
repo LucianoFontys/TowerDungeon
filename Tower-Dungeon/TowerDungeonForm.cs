@@ -13,11 +13,11 @@ using System.Threading;
 
 namespace Tower_Dungeon
 {
-    public partial class TowerDungeon: Form
+    public partial class TowerDungeon : Form
     {
         public TowerDungeon()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             AddUCLogin();
         }
 

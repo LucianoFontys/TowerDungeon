@@ -123,5 +123,14 @@
   <ItemGroup>
     <None Include="Resources\TowerBackgroundLoginPage.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black-white-seamless-pattern-stone-wall_867643-80.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black-white-seamless-pattern-stone-wall_867643-801.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

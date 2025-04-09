@@ -28,6 +28,13 @@ namespace Tower_Dungeon.Pannels
             tbxPasswordConfirm.Location = new Point((this.Width / 2) - (tbxPasswordConfirm.Width / 2), tbxPasswordConfirm.Location.Y);
         }
 
+        private void AddUCLogin()
+        {
+            LoginPannel login = new LoginPannel();
+            login.Dock = DockStyle.Fill;
+            this.Controls.Add(login);
+        }
+
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             string username = tbxUsername.Text;
@@ -72,7 +79,16 @@ namespace Tower_Dungeon.Pannels
                 Data.Database_Connection db = new Data.Database_Connection();
                 db.addUsers(username, fName, lName, email, password, isAdmin);
                 MessageBox.Show("User registered successfully.");
+
+                this.Controls.Clear();
+                AddUCLogin();
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            AddUCLogin();
         }
     }
 }

@@ -63,6 +63,36 @@ namespace Tower_Dungeon.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap black_white_seamless_pattern_stone_wall_867643_80 {
+            get {
+                object obj = ResourceManager.GetObject("black-white-seamless-pattern-stone-wall_867643-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap black_white_seamless_pattern_stone_wall_867643_801 {
+            get {
+                object obj = ResourceManager.GetObject("black-white-seamless-pattern-stone-wall_867643-801", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap R {
+            get {
+                object obj = ResourceManager.GetObject("R", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TowerBackgroundLoginPage {
             get {
                 object obj = ResourceManager.GetObject("TowerBackgroundLoginPage", resourceCulture);
