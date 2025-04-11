@@ -49,18 +49,38 @@ namespace Tower_Dungeon.Data
             }
         }
 
-        static public bool CheckUser(string username, string password)
+        static public string GetUsername(string username)
         {
             using (SqlConnection conn = new SqlConnection(SQLQueries.connectionString))
             {
                 try
                 {
                     conn.Open();
-                    return false;
+
+                    SqlCommand GetUser = new SqlCommand(SQLQueries.getUser, conn);
+                    GetUser.Parameters.AddWithValue("@username", username);
+
+                    SqlDataReader reader = GetUser.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        string user = reader["username"].ToString();
+                        if (user == username)
+                        {
+                            return user;
+                        }
+                        else if (user != username)
+                        {
+                            return null;
+                        }
+                    }
+
+                    return null;
                 }
                 catch (Exception)
                 {
-                    throw;
+                    return null;
+                    throw; 
                 }
                 finally
                 {

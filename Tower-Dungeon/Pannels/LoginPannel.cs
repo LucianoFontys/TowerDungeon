@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tower_Dungeon.Business;
 
 namespace Tower_Dungeon.Pannels
 {
@@ -29,7 +30,20 @@ namespace Tower_Dungeon.Pannels
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            string username = tbxUsername.Text;
+
+            ValidateUser validateUser = new ValidateUser();
+
+            if (validateUser.ValidateUsername(username))
+            {
+                MessageBox.Show("So true");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Please enter an existing username");
+                return;
+            }
         }
 
         private void AddUCRegister()

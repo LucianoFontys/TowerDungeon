@@ -49,6 +49,7 @@
     <Compile Include="Business\ErrorHandler.cs" />
     <Compile Include="Business\PassHash.cs" />
     <Compile Include="Business\Person.cs" />
+    <Compile Include="Business\ValidateUser.cs" />
     <Compile Include="Business\ValidEmailCheck.cs" />
     <Compile Include="Data\Database Connection.cs" />
     <Compile Include="Data\SQLQueries.cs" />
