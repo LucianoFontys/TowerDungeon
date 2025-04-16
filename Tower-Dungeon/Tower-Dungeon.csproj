@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\ErrorHandler.cs" />
+    <Compile Include="Business\Monster.cs" />
+    <Compile Include="Business\Monsters\Dragon.cs" />
+    <Compile Include="Business\Monsters\Goblin.cs" />
     <Compile Include="Business\PassHash.cs" />
     <Compile Include="Business\Person.cs" />
     <Compile Include="Business\ValidateUser.cs" />
@@ -132,6 +135,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\black-white-seamless-pattern-stone-wall_867643-801.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Resources\Monster Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,8 +25,6 @@ namespace Tower_Dungeon.Business
             this.password = password;
             this.username = username;
             this.isAdmin = isAdmin;
-        }
-
-        
+        }  
     }
 }

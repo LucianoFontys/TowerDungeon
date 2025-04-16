@@ -13,5 +13,7 @@ namespace Tower_Dungeon.Data
         public static string addUsers = "INSERT INTO Users (fName, lName, email, password, username, isAdmin) " + "VALUES (@fName, @lName, @email, @password, @username, @isAdmin)";
 
         public static string getUser = "SELECT username FROM Users WHERE username = @username";
+
+        public static string getPassword = "SELECT password FROM Users WHERE username = @username";
     }
 }

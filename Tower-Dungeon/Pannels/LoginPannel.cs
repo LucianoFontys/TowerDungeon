@@ -31,13 +31,22 @@ namespace Tower_Dungeon.Pannels
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = tbxUsername.Text;
+            string password = tbxPassword.Text;
 
             ValidateUser validateUser = new ValidateUser();
 
             if (validateUser.ValidateUsername(username))
             {
-                MessageBox.Show("So true");
-                return;
+                if (validateUser.ValidatePassword(password, username))
+                {
+                    MessageBox.Show("Login successful");
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid password");
+                    return;
+                }
             }
             else
             {

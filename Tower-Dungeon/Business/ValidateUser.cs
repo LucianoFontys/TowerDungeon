@@ -28,5 +28,21 @@ namespace Tower_Dungeon.Business
                 return true;
             }
         }
+
+        public bool ValidatePassword(string password, string username)
+        {
+            if (String.IsNullOrEmpty(password))
+            {
+                return false;
+            }
+            else if (PassHash.Verify(password, Database_Connection.GetPassword(username)))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

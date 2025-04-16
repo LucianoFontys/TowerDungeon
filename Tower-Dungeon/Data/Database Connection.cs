@@ -88,5 +88,34 @@ namespace Tower_Dungeon.Data
                 }
             }
         }
+
+        static public string GetPassword(string username)
+        {
+            using (SqlConnection conn = new SqlConnection(SQLQueries.connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand GetPassword = new SqlCommand(SQLQueries.getPassword, conn);
+                    GetPassword.Parameters.AddWithValue("@username", username);
+                    SqlDataReader reader = GetPassword.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        string password = reader["password"].ToString();
+                        return password;
+                    }
+                    return null;
+                }
+                catch (Exception)
+                {
+                    return null;
+                    throw;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }
