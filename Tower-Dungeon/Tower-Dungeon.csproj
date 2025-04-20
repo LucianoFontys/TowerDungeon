@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\ErrorHandler.cs" />
+    <Compile Include="Business\FloorManager.cs" />
     <Compile Include="Business\Heroes\Heroes.cs" />
     <Compile Include="Business\Heroes\Rogue.cs" />
     <Compile Include="Business\Heroes\Warrior.cs" />
@@ -55,8 +56,11 @@
     <Compile Include="Business\Monsters\Beholder.cs" />
     <Compile Include="Business\Monsters\Dragon.cs" />
     <Compile Include="Business\Monsters\Goblin.cs" />
+    <Compile Include="Business\Monsters\Skeleton.cs" />
+    <Compile Include="Business\Monsters\Zombie.cs" />
     <Compile Include="Business\PassHash.cs" />
     <Compile Include="Business\Person.cs" />
+    <Compile Include="Business\RandomMonster.cs" />
     <Compile Include="Business\ValidateUser.cs" />
     <Compile Include="Business\ValidEmailCheck.cs" />
     <Compile Include="Data\Database Connection.cs" />
@@ -180,6 +184,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RogueCroppedChoose.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WarriorPortrait.JPG" />
+    <None Include="Resources\RoguePortrait.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WizardPortrait.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Goblin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Beholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skeleton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zombie.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,32 +8,83 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tower_Dungeon.Business.Heroes;
+using Tower_Dungeon.Business;
+using Tower_Dungeon.Business.Monsters;
+using Tower_Dungeon.Pannels;
 
 namespace Tower_Dungeon.Pannels
 {
     public partial class FloorBattlePanel: UserControl
     {
+        private Monster monster;
+        private Heroes hero;
+        private RandomMonster randomMonster = new RandomMonster();
+        private FloorManager floorManager = new FloorManager();
+
         public FloorBattlePanel(int choice)
         {
             InitializeComponent();
-            ChosenHero(choice);
+            hero = ChosenHero(choice);
+            
+            monster = SetupMonster();
+            FloorPlanner();
         }
 
-        private void ChosenHero(int choice)
+        private Heroes ChosenHero(int choice)
         {
             switch (choice)
             {
                 case 1:
-                    Warrior warrior = new Warrior();
-                    SetupBattle(choice, warrior);
-                    break;
+                    hero = new Warrior();
+                    SetupBattle(choice, hero);
+                    pbxHeroPortrait.Image = Properties.Resources.WarriorPortrait;
+                    return hero;
                 case 2:
-                    Wizard wizard = new Wizard();
-                    SetupBattle(choice, wizard);
-                    break;
+                    hero = new Wizard();
+                    SetupBattle(choice, hero);
+                    pbxHeroPortrait.Image = Properties.Resources.WizardPortrait;
+                    return hero;
                 case 3:
-                    Rogue rogue = new Rogue();
-                    SetupBattle(choice, rogue);
+                    hero = new Rogue();
+                    SetupBattle(choice, hero);
+                    pbxHeroPortrait.Image = Properties.Resources.RoguePortrait;
+                    return hero;
+                default:
+                    break;
+            }
+            return null;
+        }
+
+        private Monster SetupMonster()
+        {
+            monster = randomMonster.GetRandomMonster();
+            return monster;
+        }
+
+        private void FloorPlanner()
+        {
+            monster = floorManager.GetMonster(monster, floorManager.FloorNumber);
+            prbMonsterHealth.Maximum = monster.Health;
+            prbMonsterHealth.Minimum = 0;
+            prbMonsterHealth.Value = monster.Health;
+            lblMonsterName.Text = monster.Name;
+
+            switch (monster)
+            {
+                case Goblin goblin:
+                    pbxMonsterPortrait.Image = Properties.Resources.Goblin;
+                    break;
+                case Skeleton skeleton:
+                    pbxMonsterPortrait.Image = Properties.Resources.Skeleton;
+                    break;
+                case Zombie zombie:
+                    pbxMonsterPortrait.Image = Properties.Resources.Zombie;
+                    break;
+                case Dragon dragon:
+                    pbxMonsterPortrait.Image = Properties.Resources.Dragon;
+                    break;
+                case Beholder beholder:
+                    pbxMonsterPortrait.Image = Properties.Resources.Beholder;
                     break;
                 default:
                     break;
@@ -62,7 +113,50 @@ namespace Tower_Dungeon.Pannels
                 this.Controls.Clear();
                 this.Controls.Add(chooseHero);
             }
-            
+        }
+
+        private void btnAttack_Click(object sender, EventArgs e)
+        {
+            int damage = hero.Attack - monster.Defense;
+            if (damage < 0)
+            {
+                damage = 0;
+            }
+
+            monster.Health -= damage;
+            tbxEvents.Text += $"{hero.Name} attacked {monster.Name} for {damage} damage!\r\n";
+            if (monster.Health < 0)
+            {
+                monster.Health = 0;
+                MessageBox.Show("You defeated the monster!");
+                floorManager.NextFloor();
+                monster = SetupMonster();
+                hero.LevelUp();
+                FloorPlanner();
+            }
+            prbMonsterHealth.Value = monster.Health;
+            MonsterAttack();
+
+        }
+        private void MonsterAttack()
+        {
+            int damage = monster.AttackDamage(hero.Defense);
+            if (damage < 0)
+            {
+                damage = 0;
+            }
+            hero.Health -= damage;
+            if (hero.Health < 0)
+            {
+                hero.Health = 0;
+                tbxEvents.Text += $"{monster.Name} killed the {hero.Name}!\r\n";
+                MainMenuPannel mainMenu = new MainMenuPannel();
+                mainMenu.Dock = DockStyle.Fill;
+                this.Controls.Clear();
+                this.Controls.Add(mainMenu);
+            }
+            tbxEvents.Text += $"{monster.Name} attacked {hero.Name} for {damage} damage!\r\n";
+            lblHealth.Text = hero.Health.ToString();
         }
     }
 }
