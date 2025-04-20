@@ -37,6 +37,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 611);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(700, 650);
             this.MinimumSize = new System.Drawing.Size(700, 650);
             this.Name = "TowerDungeon";
             this.Text = "Tower Dungeon";

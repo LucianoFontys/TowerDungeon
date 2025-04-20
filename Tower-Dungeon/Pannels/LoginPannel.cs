@@ -18,16 +18,6 @@ namespace Tower_Dungeon.Pannels
             InitializeComponent();
         }
 
-        private void LoginPannel_Resize(object sender, EventArgs e)
-        {
-            tbxUsername.Location = new Point((this.Width / 2) - (tbxUsername.Width / 2), tbxUsername.Location.Y);
-            tbxPassword.Location = new Point((this.Width / 2) - (tbxPassword.Width / 2), tbxPassword.Location.Y);
-            btnLogin.Location = new Point((this.Width / 2) - (btnLogin.Width / 2), btnLogin.Location.Y);
-            btnRegister.Location = new Point((this.Width / 2) - (btnRegister.Width / 2), btnRegister.Location.Y);
-            lblUsername.Location = new Point((this.Width / 2) - (lblUsername.Width / 2), lblUsername.Location.Y);
-            lblPassword.Location = new Point((this.Width / 2) - (lblPassword.Width / 2), lblPassword.Location.Y);
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = tbxUsername.Text;
@@ -40,7 +30,10 @@ namespace Tower_Dungeon.Pannels
                 if (validateUser.ValidatePassword(password, username))
                 {
                     MessageBox.Show("Login successful");
-                    return;
+                    MainMenuPannel mainMenu = new MainMenuPannel();
+                    mainMenu.Dock = DockStyle.Fill;
+                    this.Controls.Clear();
+                    this.Controls.Add(mainMenu);
                 }
                 else
                 {
@@ -66,6 +59,18 @@ namespace Tower_Dungeon.Pannels
         {
             this.Controls.Clear();
             AddUCRegister();
+        }
+
+        private void chkbShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkbShowPass.Checked)
+            {
+                tbxPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                tbxPassword.PasswordChar = '*';
+            }
         }
     }
 }

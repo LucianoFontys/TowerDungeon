@@ -35,14 +35,14 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.pbxBackground = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkbShowPass = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackground)).BeginInit();
             this.SuspendLayout();
             // 
             // tbxUsername
             // 
             this.tbxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbxUsername.Location = new System.Drawing.Point(237, 299);
+            this.tbxUsername.Location = new System.Drawing.Point(237, 275);
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.Size = new System.Drawing.Size(211, 20);
             this.tbxUsername.TabIndex = 0;
@@ -50,7 +50,7 @@
             // tbxPassword
             // 
             this.tbxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbxPassword.Location = new System.Drawing.Point(237, 374);
+            this.tbxPassword.Location = new System.Drawing.Point(237, 350);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.PasswordChar = '*';
             this.tbxPassword.Size = new System.Drawing.Size(211, 20);
@@ -61,7 +61,7 @@
             this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLogin.BackColor = System.Drawing.Color.LightGray;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Location = new System.Drawing.Point(270, 400);
+            this.btnLogin.Location = new System.Drawing.Point(270, 376);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(144, 38);
             this.btnLogin.TabIndex = 2;
@@ -74,7 +74,7 @@
             this.btnRegister.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRegister.BackColor = System.Drawing.Color.LightGray;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Location = new System.Drawing.Point(270, 444);
+            this.btnRegister.Location = new System.Drawing.Point(270, 420);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(144, 38);
             this.btnRegister.TabIndex = 3;
@@ -89,7 +89,7 @@
             this.lblUsername.BackColor = System.Drawing.Color.Black;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(232, 271);
+            this.lblUsername.Location = new System.Drawing.Point(232, 247);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(102, 25);
             this.lblUsername.TabIndex = 4;
@@ -101,7 +101,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(232, 346);
+            this.lblPassword.Location = new System.Drawing.Point(232, 322);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(98, 25);
             this.lblPassword.TabIndex = 5;
@@ -120,15 +120,17 @@
             this.pbxBackground.TabIndex = 6;
             this.pbxBackground.TabStop = false;
             // 
-            // checkBox1
+            // chkbShowPass
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(455, 376);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkbShowPass.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkbShowPass.BackColor = System.Drawing.SystemColors.Control;
+            this.chkbShowPass.Location = new System.Drawing.Point(454, 352);
+            this.chkbShowPass.Name = "chkbShowPass";
+            this.chkbShowPass.Size = new System.Drawing.Size(56, 17);
+            this.chkbShowPass.TabIndex = 7;
+            this.chkbShowPass.Text = "Visible";
+            this.chkbShowPass.UseVisualStyleBackColor = false;
+            this.chkbShowPass.CheckedChanged += new System.EventHandler(this.chkbShowPass_CheckedChanged);
             // 
             // LoginPannel
             // 
@@ -136,7 +138,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chkbShowPass);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.btnRegister);
@@ -147,7 +149,6 @@
             this.DoubleBuffered = true;
             this.Name = "LoginPannel";
             this.Size = new System.Drawing.Size(700, 650);
-            this.Resize += new System.EventHandler(this.LoginPannel_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackground)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -163,6 +164,6 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.PictureBox pbxBackground;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkbShowPass;
     }
 }

@@ -47,7 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\ErrorHandler.cs" />
-    <Compile Include="Business\Monster.cs" />
+    <Compile Include="Business\Heroes\Heroes.cs" />
+    <Compile Include="Business\Heroes\Rogue.cs" />
+    <Compile Include="Business\Heroes\Warrior.cs" />
+    <Compile Include="Business\Heroes\Wizard.cs" />
+    <Compile Include="Business\Monsters\Monster.cs" />
+    <Compile Include="Business\Monsters\Beholder.cs" />
     <Compile Include="Business\Monsters\Dragon.cs" />
     <Compile Include="Business\Monsters\Goblin.cs" />
     <Compile Include="Business\PassHash.cs" />
@@ -60,6 +65,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>masterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pannels\ChooseHeroPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pannels\ChooseHeroPanel.Designer.cs">
+      <DependentUpon>ChooseHeroPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pannels\FloorBattlePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pannels\FloorBattlePanel.Designer.cs">
+      <DependentUpon>FloorBattlePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pannels\MainMenuPannel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pannels\MainMenuPannel.Designer.cs">
+      <DependentUpon>MainMenuPannel.cs</DependentUpon>
     </Compile>
     <Compile Include="Pannels\RegisterPannel.cs">
       <SubType>UserControl</SubType>
@@ -81,6 +104,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pannels\ChooseHeroPanel.resx">
+      <DependentUpon>ChooseHeroPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pannels\FloorBattlePanel.resx">
+      <DependentUpon>FloorBattlePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pannels\MainMenuPannel.resx">
+      <DependentUpon>MainMenuPannel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pannels\RegisterPannel.resx">
       <DependentUpon>RegisterPannel.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +171,15 @@
   <ItemGroup>
     <Folder Include="Interfaces\" />
     <Folder Include="Resources\Monster Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WarriorCroppedChoose.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WizardCroppedChoose.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RogueCroppedChoose.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

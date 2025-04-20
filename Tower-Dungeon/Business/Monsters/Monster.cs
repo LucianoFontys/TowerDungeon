@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tower_Dungeon.Business
 {
-    class Monster
+    abstract class Monster
     {
         protected int id;
         protected string name;
@@ -25,26 +25,6 @@ namespace Tower_Dungeon.Business
             this.magicAttack = magicAttack;
             this.defense = defense;
             this.magicDefense = magicDefense;
-        }
-
-        public int Attack()
-        {
-            return attack;
-        }
-
-        public int MagicAttack()
-        {
-            return magicAttack;
-        }
-
-        public int Defense()
-        {
-            return defense;
-        }
-
-        public int MagicDefense()
-        {
-            return magicDefense;
         }
     }
 }

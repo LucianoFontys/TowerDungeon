@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Tower_Dungeon.Business.Monsters
 {
-    class Dragon : Monster
+    class Beholder : Monster
     {
-        public Dragon() : base(5, "Dragon", 500, 50, 25, 20, 15)
+        public Beholder() : base(4, "Beholder", 400, 50, 25, 20, 15)
         {
-           
-                // Dragon specific properties and methods can be added here
+            // Beholder specific properties and methods can be added here
         }
     }
 }

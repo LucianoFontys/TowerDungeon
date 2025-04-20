@@ -93,9 +93,39 @@ namespace Tower_Dungeon.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RogueCroppedChoose {
+            get {
+                object obj = ResourceManager.GetObject("RogueCroppedChoose", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TowerBackgroundLoginPage {
             get {
                 object obj = ResourceManager.GetObject("TowerBackgroundLoginPage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WarriorCroppedChoose {
+            get {
+                object obj = ResourceManager.GetObject("WarriorCroppedChoose", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WizardCroppedChoose {
+            get {
+                object obj = ResourceManager.GetObject("WizardCroppedChoose", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
